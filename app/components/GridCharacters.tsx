@@ -33,9 +33,6 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
   );
 
   useEffect(() => {
-    // console.log("isSelectedCharacterOne,",isSelectedCharacterOne);
-
-    // Filtra el array de personajes por el ID seleccionado
     const selectedCharacterOne = characters.find(
       (character) => character.id === isSelectedCharacterOne
     );

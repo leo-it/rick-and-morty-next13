@@ -1,5 +1,6 @@
 import { GridCharacters, ListEpisodes } from "./components";
 
+import { ArrowScroll } from "./components/ArrowScroll";
 import Link from "next/link";
 import api from "./api";
 import clsx from "clsx";
@@ -18,7 +19,7 @@ export default async function Home({
 
   return (
     <div className="max-w-[1900px] mb-20 mx-auto">
-      
+      <ArrowScroll/>
       <section className="grid md:grid-cols-2 grid-cols-1 w-full ">
         <GridCharacters characters={characters} />
       </section>
