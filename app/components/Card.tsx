@@ -1,8 +1,9 @@
 "use client";
 
-import React, { FC, useRef, useState } from "react";
+import React, { FC, useEffect, useRef } from "react";
 
 import Image from "next/image";
+import clsx from "clsx";
 
 interface Props {
   name: string;
@@ -10,15 +11,31 @@ interface Props {
   specie: string;
   id: number;
   image: string;
+  setIsSelected: any;
+  // setIsSelected: () => void
+  isSelected: number;
 }
-export const Card: FC<Props> = ({ name, status, specie, id,image }) => {
-  const cardRef = useRef(null);
-  const [isSelected, setIsSelected] = useState(false);
-
-  const handleSelect = () => {
-    if (cardRef.current) {
-      cardRef.current.style.backgroundColor = "purple"; // Cambia el color a tu preferencia
+export const Card: FC<Props> = ({
+  name,
+  status,
+  specie,
+  id,
+  image,
+  setIsSelected,
+  isSelected,
+}) => {
+  useEffect(() => {
+    if (id === isSelected) {
+      console.log(id);
     }
+  }, [id, isSelected]);
+
+  // const cardRef = useRef(null);
+  const handleSelect = () => {
+    setIsSelected(id);
+    /*  if (cardRef.current) {
+      cardRef.current.style.backgroundColor = "purple"; // Cambia el color a tu preferencia
+    } */
   };
   const cargador = ({ src, width }: { src: any; width: any }) => {
     return `${src}?w=${width}`;
@@ -26,8 +43,11 @@ export const Card: FC<Props> = ({ name, status, specie, id,image }) => {
   return (
     <div
       key={id}
-      ref={cardRef}
-      className="bg-white mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden"
+      // ref={cardRef}
+      className={clsx(
+        "bg-white mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden",
+        isSelected === id && "bg-zinc-200"
+      )}
     >
       <div className="sm:flex sm:items-center px-6 py-4">
         <Image
