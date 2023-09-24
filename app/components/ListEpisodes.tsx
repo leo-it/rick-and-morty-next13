@@ -22,11 +22,6 @@ export const ListEpisodes = () => {
     numerosTwo.includes(numero)
   );
 
-  // Obtener las URL completas correspondientes a los números coincidentes
-  /*  const urlsCoincidentes = characterOneEpisodes.filter((url) =>
-    numerosCoincidentes.includes(obtenerNumero(url))
-  ); */
-
   return (
     <>
       {characterOneEpisodes.length > 0 && characterTwoEpisodes.length > 0 ? (

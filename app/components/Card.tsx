@@ -12,7 +12,6 @@ interface Props {
   id: number;
   image: string;
   setIsSelected: any;
-  // setIsSelected: () => void
   isSelected: number;
 }
 export const Card: FC<Props> = ({

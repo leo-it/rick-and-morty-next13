@@ -12,12 +12,16 @@ export default async function Home({
   const page =
     typeof searchParams.page === "string" ? Number(searchParams.page) : 1;
 
-  const responseCharacters = await api.item.fetch("character", page);
-const pageLength=responseCharacters.info.pages
+  const responseCharacters = await api.fetch("character", page);
+  const pageLength = responseCharacters.info.pages;
   const characters = responseCharacters.results;
 
   return (
     <div className="max-w-[1900px] mb-20 mx-auto">
+      
+      <section className="grid md:grid-cols-2 grid-cols-1 w-full ">
+        <GridCharacters characters={characters} />
+      </section>
       <div className="flex space-x-6 justify-center">
         <Link
           href={{
@@ -31,9 +35,12 @@ const pageLength=responseCharacters.info.pages
             page <= 1 && "pointer-events-none opacity-50"
           )}
         >
-          -
+          prev
         </Link>
-        <Link 
+        <p>
+          {page}/{pageLength}
+        </p>
+        <Link
           href={{
             pathname: "/",
             query: {
@@ -45,13 +52,10 @@ const pageLength=responseCharacters.info.pages
             page >= pageLength && "pointer-events-none opacity-50"
           )}
         >
-          +
+          next
         </Link>
       </div>
-      <section className="grid md:grid-cols-2 grid-cols-1 w-full ">
-        <GridCharacters characters={characters} />
-      </section>
-      <ListEpisodes /> 
+      <ListEpisodes />
     </div>
   );
 }
