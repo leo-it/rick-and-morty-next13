@@ -26,7 +26,6 @@ export const ListEpisodes = () => {
   /*  const urlsCoincidentes = characterOneEpisodes.filter((url) =>
     numerosCoincidentes.includes(obtenerNumero(url))
   ); */
-  console.log(numerosCoincidentes, "numerosCoincidentes");
 
   return (
     <>
