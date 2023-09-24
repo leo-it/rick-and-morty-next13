@@ -55,8 +55,11 @@ export default async function Home({
         >
           next
         </Link>
-      </div>
+      </div>  
+      <div className="flex ">
       <ListEpisodes />
+
+      </div>
     </div>
   );
 }
