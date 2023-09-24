@@ -1,4 +1,5 @@
-import { GridCharacters } from "./components";
+import { GridCharacters, ListEpisodes } from "./components";
+
 import Link from "next/link";
 import api from "./api";
 import clsx from "clsx";
@@ -50,26 +51,7 @@ export default async function Home({
       <section className="grid md:grid-cols-2 grid-cols-1 w-full ">
         <GridCharacters characters={characters} />
       </section>
-      <article className="grid md:grid-cols-3 grid-cols-1 mt-6 px-4 ">
-        <section className="border-r  border-gray-400">
-          {/* esto se podria componentizar */}
-          <h3 className="font-bold text-2xl">Character #1 - Only Episodes</h3>
-          <ul className="list-none">
-            <li className="text-lg">
-              <span className="font-semibold">episode</span> -{" "}
-              <span> Now this is a story all about how, </span>
-            </li>
-          </ul>
-        </section>
-        <section className="border-r  border-gray-400">
-          <h3 className="font-bold text-2xl">
-            Character #1 & #2 -Shared Episodes
-          </h3>
-        </section>
-        <section className="border-r  border-gray-400">
-          <h3 className="font-bold text-2xl">Character #2 - Only Episodes</h3>
-        </section>
-      </article>
+      <ListEpisodes /> 
     </div>
   );
 }

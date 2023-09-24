@@ -1,8 +1,9 @@
 "use client";
 
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 
 import { Card } from "./Card";
+import useStore from "../store";
 
 interface Character {
   id: number;
@@ -19,9 +20,9 @@ interface Props {
   characters: Character[];
 }
 export const GridCharacters: FC<Props> = ({ characters }) => {
-  const [isSelectedCharacterOne, setIsSelectedCharacterOne] = useState(null);
-  const [isSelectedCharacterTwo, setIsSelectedCharacterTwo] = useState(null);
-console.log(characters);
+  const [isSelectedCharacterOne, setIsSelectedCharacterOne] = useState(0);
+  const [isSelectedCharacterTwo, setIsSelectedCharacterTwo] = useState(0);
+  const { setCharacterOneEpisodes, setCharacterTwoEpisodes } = useStore();
 
   const charactersPerPage = 6;
   const charactersOne = characters.slice(0, charactersPerPage);
@@ -29,7 +30,27 @@ console.log(characters);
     charactersPerPage,
     charactersPerPage + 6
   );
+  useEffect(() => {
+    // console.log("isSelectedCharacterOne,",isSelectedCharacterOne);
 
+    // Filtra el array de personajes por el ID seleccionado
+    const selectedCharacterOne = characters.find(
+      (character) => character.id === isSelectedCharacterOne
+    );
+    if (selectedCharacterOne) setCharacterOneEpisodes(selectedCharacterOne.episode);
+  }, [isSelectedCharacterOne, characters, setCharacterOneEpisodes]);
+
+  useEffect(() => {
+    // console.log("isSelectedCharacterTwo,",isSelectedCharacterTwo);
+
+    // Filtra el array de personajes por el ID seleccionado
+    // console.log(isSelectedCharacterTwo);
+
+    const selectedCharacterTwo = characters.find(
+      (character) => character.id === isSelectedCharacterTwo
+    );
+    if (selectedCharacterTwo) setCharacterTwoEpisodes(selectedCharacterTwo.episode);
+  }, [isSelectedCharacterTwo, characters, setCharacterTwoEpisodes]);
 
   return (
     <>

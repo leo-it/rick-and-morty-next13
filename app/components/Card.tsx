@@ -26,7 +26,6 @@ export const Card: FC<Props> = ({
 }) => {
   useEffect(() => {
     if (id === isSelected) {
-      console.log(id);
     }
   }, [id, isSelected]);
 
