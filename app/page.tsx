@@ -13,12 +13,12 @@ export default async function Home({
     typeof searchParams.page === "string" ? Number(searchParams.page) : 1;
 
   const responseCharacters = await api.item.fetch("character", page);
-
+const pageLength=responseCharacters.info.pages
   const characters = responseCharacters.results;
 
   return (
-    <div className="max-w-[1900px]  mx-auto">
-      <div className="flex space-x-6">
+    <div className="max-w-[1900px] mb-20 mx-auto">
+      <div className="flex space-x-6 justify-center">
         <Link
           href={{
             pathname: "/",
@@ -27,13 +27,13 @@ export default async function Home({
             },
           }}
           className={clsx(
-            "rounded border bg-gray-100 px-3 py-1 text-sm text-gray-800",
+            "rounded border bg-purple-500 px-3 py-1 text-sm text-gray-50",
             page <= 1 && "pointer-events-none opacity-50"
           )}
         >
           -
         </Link>
-        <Link
+        <Link 
           href={{
             pathname: "/",
             query: {
@@ -41,8 +41,8 @@ export default async function Home({
             },
           }}
           className={clsx(
-            "rounded border bg-gray-100 px-3 py-1 text-sm text-gray-800",
-            page >= 41 && "pointer-events-none opacity-50"
+            "rounded border  bg-purple-500 px-3 py-1 text-sm text-gray-50",
+            page >= pageLength && "pointer-events-none opacity-50"
           )}
         >
           +

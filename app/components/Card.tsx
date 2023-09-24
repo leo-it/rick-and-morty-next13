@@ -29,12 +29,9 @@ export const Card: FC<Props> = ({
     }
   }, [id, isSelected]);
 
-  // const cardRef = useRef(null);
   const handleSelect = () => {
     setIsSelected(id);
-    /*  if (cardRef.current) {
-      cardRef.current.style.backgroundColor = "purple"; // Cambia el color a tu preferencia
-    } */
+   
   };
   const cargador = ({ src, width }: { src: any; width: any }) => {
     return `${src}?w=${width}`;
@@ -68,7 +65,7 @@ export const Card: FC<Props> = ({
               onClick={() => handleSelect()}
               className="text-xs font-semibold rounded-full px-4 py-1 leading-normal border-2 border-purple-400 text-purple hover:bg-purple-400 hover:text-white"
             >
-              Seleccionar
+              Select
             </button>
           </div>
         </div>

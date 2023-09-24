@@ -22,14 +22,15 @@ interface Props {
 export const GridCharacters: FC<Props> = ({ characters }) => {
   const [isSelectedCharacterOne, setIsSelectedCharacterOne] = useState(0);
   const [isSelectedCharacterTwo, setIsSelectedCharacterTwo] = useState(0);
-  const { setCharacterOneEpisodes, setCharacterTwoEpisodes } = useStore();
+  const { setCharacterOne, setCharacterTwo } = useStore();
 
-  const charactersPerPage = 6;
-  const charactersOne = characters.slice(0, charactersPerPage);
+//largo de la paginacion
+  const charactersOne = characters.slice(0, characters.length / 2);
   const charactersTwo = characters.slice(
-    charactersPerPage,
-    charactersPerPage + 6
+    characters.length / 2,
+    characters.length
   );
+  
   useEffect(() => {
     // console.log("isSelectedCharacterOne,",isSelectedCharacterOne);
 
@@ -37,26 +38,23 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
     const selectedCharacterOne = characters.find(
       (character) => character.id === isSelectedCharacterOne
     );
-    if (selectedCharacterOne) setCharacterOneEpisodes(selectedCharacterOne.episode);
-  }, [isSelectedCharacterOne, characters, setCharacterOneEpisodes]);
+    if (selectedCharacterOne)
+      setCharacterOne(selectedCharacterOne);
+  }, [isSelectedCharacterOne, characters, setCharacterOne]);
 
   useEffect(() => {
-    // console.log("isSelectedCharacterTwo,",isSelectedCharacterTwo);
-
-    // Filtra el array de personajes por el ID seleccionado
-    // console.log(isSelectedCharacterTwo);
-
     const selectedCharacterTwo = characters.find(
       (character) => character.id === isSelectedCharacterTwo
     );
-    if (selectedCharacterTwo) setCharacterTwoEpisodes(selectedCharacterTwo.episode);
-  }, [isSelectedCharacterTwo, characters, setCharacterTwoEpisodes]);
+    if (selectedCharacterTwo)
+      setCharacterTwo(selectedCharacterTwo);
+  }, [isSelectedCharacterTwo, characters, setCharacterTwo]);
 
   return (
     <>
-      <article className="p-4  w-full border-r   border-gray-400">
+      <article className="p-4  w-full border-r border-gray-400">
         <h3 className="my-5 font-bold text-2xl">Character #1</h3>
-        <div className="grid grid-cols-2 gap-2 ">
+        <div className="grid grid-cols-2 gap-2 max-h-[80vh] overflow-y-auto">
           {charactersOne.map((result) => {
             return (
               <div key={result.id}>
@@ -74,9 +72,9 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
           })}
         </div>{" "}
       </article>
-      <article className="p-4  w-full border-gray-400">
+      <article className="p-4  w-full border-gray-400 ">
         <h3 className="my-5 font-bold text-2xl">Character #2</h3>
-        <div className="grid grid-cols-2 gap-2 ">
+        <div className="grid grid-cols-2 gap-2 max-h-[80vh] overflow-y-auto  ">
           {charactersTwo.map((result) => {
             return (
               <div key={result.id}>

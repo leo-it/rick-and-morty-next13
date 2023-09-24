@@ -7,6 +7,9 @@ const api = {
       ).then(
         (res) =>
           res.json() as Promise<{
+            info: {
+              pages: number;
+            };
             results: {
               id: number;
               name: string;
