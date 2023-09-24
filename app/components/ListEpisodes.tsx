@@ -1,5 +1,8 @@
 "use client";
 
+import { CardList } from "./CardList";
+import { CardListMatch } from "./CardListMatch";
+import Image from "next/image";
 import React from "react";
 import useStore from "../store";
 
@@ -14,67 +17,42 @@ export const ListEpisodes = () => {
   }
 
   // Obtener los números de ambos arrays
-  const numerosOne = characterOneEpisodes.map(obtenerNumero);
-  const numerosTwo = characterTwoEpisodes.map(obtenerNumero);
+  const episodesOne = characterOneEpisodes.map(obtenerNumero);
+  const episodesTwo = characterTwoEpisodes.map(obtenerNumero);
 
   // Encontrar números coincidentes
-  const numerosCoincidentes = numerosOne.filter((numero) =>
-    numerosTwo.includes(numero)
+  const episodesMatch = episodesOne.filter((numero) =>
+    episodesTwo.includes(numero)
   );
+  const cargador = ({ src, width }: { src: any; width: any }) => {
+    return `${src}?w=${width}`;
+  };
 
   return (
     <>
       {characterOneEpisodes.length > 0 && characterTwoEpisodes.length > 0 ? (
-        <article className="grid md:grid-cols-3 grid-cols-1 mt-16 px-4 ">
-          <section className="border-r  border-gray-400 mx-6">
-            <h3 className="font-bold text-2xl mb-4 h-20">
-              Character {characterOne.name} - Only Episodes
-            </h3>
-            <ul className="list-none max-h-[50vh] overflow-y-auto   ">
-              {numerosOne.map((ep) => {
-                return (
-                  <li key={ep[-1]}>
-                    <span className="font-semibold">episode</span> -{" "}
-                    <span> {ep} </span>
-                  </li>
-                );
-              })}
-            </ul>
+        <article className="grid max-w-[1300px] mx-auto md:grid-cols-3 grid-cols-1 mt-16 px-4 ">
+          <section className="border rounded-lg max-w-[350px] min-w-[320px]  border-gray-400 ">
+            <CardList
+              character={characterOne}
+              episodes={episodesOne}
+              title={"Episodes Character #1"}
+            />
           </section>
-          <section className="border-r  border-gray-400 mx-3">
-            <h3 className="font-bold text-2xl mb-4 h-20">
-              Character {characterOne.name} & {characterTwo.name} -Shared
-              Episodes
-            </h3>
-            <ul className="list-none max-h-[50vh] overflow-y-auto  ">
-              {numerosCoincidentes.length > 0 ? (
-                numerosCoincidentes.map((ep) => {
-                  return (
-                    <li key={ep[-1]}>
-                      <span className="font-semibold">episode</span> -{" "}
-                      <span> {ep} </span>
-                    </li>
-                  );
-                })
-              ) : (
-                <p>there are no matches</p>
-              )}
-            </ul>
+          <section className="border rounded-lg max-w-[350px] min-w-[320px]  border-gray-400 ">
+            <CardListMatch
+              characterOne={characterOne}
+              characterTwo={characterTwo}
+              episodes={episodesMatch}
+              title={"Episodes Character #1 & #2"}
+            />
           </section>
-          <section className="border-r  border-gray-400 mx-6">
-            <h3 className="font-bold text-2xl mb-4 h-20">
-              Character {characterTwo.name} - Only Episodes
-            </h3>
-            <ul className="list-none max-h-[50vh] overflow-y-auto  ">
-              {numerosTwo.map((ep) => {
-                return (
-                  <li key={ep[-1]}>
-                    <span className="font-semibold">episode</span> -{" "}
-                    <span> {ep} </span>
-                  </li>
-                );
-              })}
-            </ul>
+          <section className="border rounded-lg max-w-[350px] min-w-[320px]  border-gray-400 ">
+            <CardList
+              character={characterTwo}
+              episodes={episodesTwo}
+              title={"Episodes Character #2"}
+            />
           </section>
         </article>
       ) : (

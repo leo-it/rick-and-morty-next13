@@ -18,12 +18,7 @@ export const ArrowScroll = () => {
       behavior: "smooth",
     });
   }
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  };
+  
   useEffect(() => {
     setIsClicked(false);
   }, [characterOne, characterTwo]);
