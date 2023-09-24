@@ -36,11 +36,12 @@ export const Card: FC<Props> = ({
     return `${src}?w=${width}`;
   };
   return (
+
     <div
       key={id}
       // ref={cardRef}
       className={clsx(
-        "bg-white mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden",
+        "bg-white mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden scale-up-hor-center",
         isSelected === id && "bg-zinc-200"
       )}
     >

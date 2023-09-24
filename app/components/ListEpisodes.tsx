@@ -31,7 +31,7 @@ export const ListEpisodes = () => {
   return (
     <>
       {characterOneEpisodes.length > 0 && characterTwoEpisodes.length > 0 ? (
-        <article className="grid max-w-[1300px] gap-8 mx-auto md:grid-cols-3 grid-cols-1 mt-16 px-4 ">
+        <article className="grid max-w-[1300px] gap-8 mx-auto md:grid-cols-3 grid-cols-1 mt-16 px-4 scale-up-hor-center ">
           <section className="border rounded-lg max-w-[350px] min-w-[320px]  border-gray-400 ">
             <CardList
               character={characterOne}

@@ -48,7 +48,7 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
 
   return (
     <>
-      <article className="p-4  w-full border rounded-lg border-gray-400">
+      <article className="p-4  w-full  border rounded-lg border-gray-400">
         <h3 className="my-5 font-bold text-2xl">
           Character #1{" "}
           {characterOne && characterOne.name ? (
@@ -57,7 +57,7 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
             <></>
           )}
         </h3>
-        <div className="grid grid-cols-2 gap-2 max-h-[75vh] overflow-y-auto">
+        <div className="grid grid-cols-2 gap-2 max-h-[65vh] overflow-y-auto">
           {charactersOne.map((result) => {
             return (
               <div key={result.id}>
@@ -84,7 +84,7 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
             <></>
           )}
         </h3>
-        <div className="grid grid-cols-2 gap-2 max-h-[75vh] overflow-y-auto  ">
+        <div className="grid grid-cols-2 gap-2 max-h-[65vh] overflow-y-auto  ">
           {charactersTwo.map((result) => {
             return (
               <div key={result.id}>

@@ -13,36 +13,35 @@ export const ArrowScroll = () => {
   function handleScroll() {
     setIsClicked(true);
     window.scroll({
-      top: document.body.offsetHeight,
+      top: 0,
       left: 0,
       behavior: "smooth",
     });
   }
-  
+
   useEffect(() => {
     setIsClicked(false);
+
+    if (characterOne.name && characterTwo.name)
+      window.scroll({
+        top: document.body.offsetHeight,
+        left: 0,
+        behavior: "smooth",
+      });
   }, [characterOne, characterTwo]);
 
   return (
     <>
-      {!isClicked &&
-      characterOne &&
-      characterOne.name &&
-      characterTwo &&
-      characterTwo.name ? (
+      {!isClicked && characterOne.name && characterTwo.name ? (
         <>
           {" "}
-          <div
-            className="circle  
-      bg-purple-500
-      "
+          <button
+            type="button"
+            onClick={handleScroll}
+            className="circle rotate-scale-up bg-purple-500 "
           >
-            <button
-              className="arrow "
-              onClick={handleScroll}
-              type="button"
-            ></button>
-          </div>
+            <div className="arrow "></div>{" "}
+          </button>
         </>
       ) : (
         <></>
