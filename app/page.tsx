@@ -25,6 +25,7 @@ export default async function Home({
       </section>
       <div className="flex space-x-6 justify-center ">
         <Link
+          prefetch={false}
           href={{
             pathname: "/",
             query: {
@@ -42,6 +43,7 @@ export default async function Home({
           {page}/{pageLength}
         </p>
         <Link
+          prefetch={true}
           href={{
             pathname: "/",
             query: {
@@ -55,10 +57,9 @@ export default async function Home({
         >
           next
         </Link>
-      </div>  
+      </div>
       <div className="flex ">
-      <ListEpisodes />
-
+        <ListEpisodes />
       </div>
     </div>
   );
