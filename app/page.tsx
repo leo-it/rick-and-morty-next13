@@ -19,8 +19,8 @@ export default async function Home({
 
   return (
     <div className="max-w-[1900px] mb-20 mx-auto">
-      <ArrowScroll/>
-      <section className="grid md:grid-cols-2 grid-cols-1 w-full ">
+      <ArrowScroll />
+      <section className="grid md:grid-cols-2 grid-cols-1 w-full gap-4 mt-10 mb-4 ">
         <GridCharacters characters={characters} />
       </section>
       <div className="flex space-x-6 justify-center">
