@@ -23,7 +23,7 @@ export default async function Home({
       <section className="grid md:grid-cols-2 grid-cols-1 w-full gap-4 mt-10 mb-4 ">
         <GridCharacters characters={characters} />
       </section>
-      <div className="flex space-x-6 justify-center">
+      <div className="flex space-x-6 justify-center ">
         <Link
           href={{
             pathname: "/",
@@ -32,7 +32,7 @@ export default async function Home({
             },
           }}
           className={clsx(
-            "rounded border bg-purple-500 px-3 py-1 text-sm text-gray-50",
+            "rounded-xl border bg-purple-500 px-3 py-1 text-sm text-gray-50",
             page <= 1 && "pointer-events-none opacity-50"
           )}
         >
@@ -49,7 +49,7 @@ export default async function Home({
             },
           }}
           className={clsx(
-            "rounded border  bg-purple-500 px-3 py-1 text-sm text-gray-50",
+            "rounded-xl border  bg-purple-500 px-3 py-1 text-sm text-gray-50",
             page >= pageLength && "pointer-events-none opacity-50"
           )}
         >
