@@ -38,7 +38,7 @@ export const ArrowScroll = () => {
           <button
             type="button"
             onClick={handleScroll}
-            className="circle rotate-scale-up bg-purple-500 "
+            className="circle  bg-purple-500 "
           >
             <div className="arrow "></div>{" "}
           </button>
