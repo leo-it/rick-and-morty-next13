@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from 'zustand'
 
 interface CharacterState {
   characterOne: { episode: string[]; name: string; image: string };
