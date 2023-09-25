@@ -48,60 +48,66 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
 
   return (
     <>
-      <article className="p-4  w-full  border rounded-lg border-gray-400">
-        <h3 className="my-5 font-bold text-2xl font-rick">
-          Character #1{" "}
-          {characterOne && characterOne.name ? (
-            <span>( {characterOne.name} )</span>
-          ) : (
-            <></>
-          )}
-        </h3>
-        <div className="grid grid-cols-2 gap-2 max-h-[55vh] overflow-y-auto">
-          {charactersOne.map((result) => {
-            return (
-              <div key={result.id}>
-                <Card
-                  isSelected={isSelectedCharacterOne}
-                  setIsSelected={setIsSelectedCharacterOne}
-                  name={result.name}
-                  status={result.status}
-                  specie={result.species}
-                  image={result.image}
-                  id={result.id}
-                />
-              </div>
-            );
-          })}
-        </div>{" "}
-      </article>
-      <article className="p-4  w-full border rounded-lg border-gray-400 ">
-        <h3 className="my-5 font-bold text-2xl font-rick">
-          Character #2{" "}
-          {characterTwo && characterTwo.name ? (
-            <span>( {characterTwo.name} )</span>
-          ) : (
-            <></>
-          )}
-        </h3>
-        <div className="grid grid-cols-2 gap-2 max-h-[55vh] overflow-y-auto  ">
-          {charactersTwo.map((result) => {
-            return (
-              <div key={result.id}>
-                <Card
-                  isSelected={isSelectedCharacterTwo}
-                  setIsSelected={setIsSelectedCharacterTwo}
-                  name={result.name}
-                  status={result.status}
-                  specie={result.species}
-                  image={result.image}
-                  id={result.id}
-                />
-              </div>
-            );
-          })}
-        </div>
-      </article>
+      {characters.length > 0 ? (
+        <>
+          <article className="p-4  w-full  border rounded-lg border-gray-400">
+            <h3 className="my-5 font-bold text-2xl font-rick">
+              Character #1{" "}
+              {characterOne && characterOne.name ? (
+                <span>( {characterOne.name} )</span>
+              ) : (
+                <></>
+              )}
+            </h3>
+            <div className="grid grid-cols-2 gap-2 max-h-[55vh] overflow-y-auto">
+              {charactersOne.map((result) => {
+                return (
+                  <div key={result.id}>
+                    <Card
+                      isSelected={isSelectedCharacterOne}
+                      setIsSelected={setIsSelectedCharacterOne}
+                      name={result.name}
+                      status={result.status}
+                      specie={result.species}
+                      image={result.image}
+                      id={result.id}
+                    />
+                  </div>
+                );
+              })}
+            </div>{" "}
+          </article>
+          <article className="p-4  w-full border rounded-lg border-gray-400 ">
+            <h3 className="my-5 font-bold text-2xl font-rick">
+              Character #2{" "}
+              {characterTwo && characterTwo.name ? (
+                <span>( {characterTwo.name} )</span>
+              ) : (
+                <></>
+              )}
+            </h3>
+            <div className="grid grid-cols-2 gap-2 max-h-[55vh] overflow-y-auto  ">
+              {charactersTwo.map((result) => {
+                return (
+                  <div key={result.id}>
+                    <Card
+                      isSelected={isSelectedCharacterTwo}
+                      setIsSelected={setIsSelectedCharacterTwo}
+                      name={result.name}
+                      status={result.status}
+                      specie={result.species}
+                      image={result.image}
+                      id={result.id}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </article>
+        </>
+      ) : (
+        <p className="font-rick"> Characters dont found</p>
+      )}
     </>
   );
 };

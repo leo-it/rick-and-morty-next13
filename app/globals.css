@@ -6,7 +6,7 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  background-color:aliceblue
+  background-color:rgba(248, 247, 247, 0.441)
 }
 
 html {
