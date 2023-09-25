@@ -30,18 +30,16 @@ export const Card: FC<Props> = ({
 
   const handleSelect = () => {
     setIsSelected(id);
-   
   };
   const cargador = ({ src, width }: { src: any; width: any }) => {
     return `${src}?w=${width}`;
   };
   return (
-
     <div
       key={id}
       // ref={cardRef}
-      className={clsx( 
-        "bg-white mx-auto max-w-sm shadow-lg hover:border hover:border-purple-500 rounded-lg overflow-hidden scale-up-hor-center",
+      className={clsx(
+        "bg-white mx-auto max-w-sm shadow-lg hover:border hover:border-purple-500 rounded-lg overflow-hidden scale-up-hor-center ",
         isSelected === id && "bg-zinc-200"
       )}
     >
@@ -56,7 +54,9 @@ export const Card: FC<Props> = ({
         />
         <div className="text-center sm:text-left sm:flex-grow">
           <div className="mb-4 ">
-            <p className="text-xl leading-tight truncate w-full text-gray-600 " >{name}</p>
+            <p className="text-xl leading-tight truncate w-full text-gray-600 ">
+              {name}
+            </p>
             <p className="text-sm leading-tight text-gray-500">{status}</p>
             <p className="text-sm leading-tight text-gray-500">{specie}</p>
           </div>

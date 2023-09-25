@@ -57,7 +57,7 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
             <></>
           )}
         </h3>
-        <div className="grid grid-cols-2 gap-2 max-h-[65vh] overflow-y-auto">
+        <div className="grid grid-cols-2 gap-2 max-h-[55vh] overflow-y-auto">
           {charactersOne.map((result) => {
             return (
               <div key={result.id}>
@@ -84,7 +84,7 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
             <></>
           )}
         </h3>
-        <div className="grid grid-cols-2 gap-2 max-h-[65vh] overflow-y-auto  ">
+        <div className="grid grid-cols-2 gap-2 max-h-[55vh] overflow-y-auto  ">
           {charactersTwo.map((result) => {
             return (
               <div key={result.id}>

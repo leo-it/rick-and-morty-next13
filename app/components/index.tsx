@@ -1,3 +1,5 @@
 export {Card} from './Card'
 export {GridCharacters} from './GridCharacters'
 export {ListEpisodes} from './ListEpisodes'
+export {Footer} from './Footer'
+export {Navbar} from './Navbar'
