@@ -6,7 +6,7 @@ import React from "react";
 export const Navbar = () => {
   return (
     <div className="h-[80px] bg-gray-300 text-center flex flex-col justify-center ">
-      <div className="ml-20">
+      <div className="md:ml-20 ml-4">
         <Image src={img} width={120} height={120} alt="rick-and-morty" />
       </div>
      

@@ -33,7 +33,7 @@ export default async function Home({
             },
           }}
           className={clsx(
-            "rounded-xl border bg-purple-500 px-3 py-1 text-sm text-gray-50",
+            "rounded-xl border bg-purple-500 hover:bg-purple-600 px-3 py-1 text-sm text-gray-50",
             page <= 1 && "pointer-events-none opacity-50"
           )}
         >
@@ -51,7 +51,7 @@ export default async function Home({
             },
           }}
           className={clsx(
-            "rounded-xl border  bg-purple-500 px-3 py-1 text-sm text-gray-50",
+            "rounded-xl border  bg-purple-500 hover:bg-purple-600 px-3 py-1 text-sm text-gray-50",
             page >= pageLength && "pointer-events-none opacity-50"
           )}
         >
