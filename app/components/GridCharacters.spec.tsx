@@ -1,7 +1,7 @@
-import { Card, GridCharacters } from ".";
 import { render, screen } from "@testing-library/react";
 
-let isSelected = 0;
+import { GridCharacters } from ".";
+
 const characters = [
   {
     id: 1,
