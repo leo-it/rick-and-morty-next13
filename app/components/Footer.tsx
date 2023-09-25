@@ -10,7 +10,7 @@ export const Footer = () => {
         <Image src={img} width={150} height={150} alt="rick-and-morty" />
       </div>
       <div className="py-2">
-        <p className="text-gray-700">Leonardo Sainz</p>
+        <p className="text-gray-700 font-rick">Leonardo Sainz</p>
       </div>
     </div>
   );

@@ -44,7 +44,7 @@ export const ListEpisodes = () => {
               characterOne={characterOne}
               characterTwo={characterTwo}
               episodes={episodesMatch}
-              title={"Episodes Character #1 & #2"}
+              title={"Episodes Characters #1 & #2"}
             />
           </section>
           <section className="border rounded-lg max-w-[350px] min-w-[320px]  border-gray-400 ">

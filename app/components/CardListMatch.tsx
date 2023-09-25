@@ -45,15 +45,15 @@ export const CardListMatch: FC<Props> = ({
         </div>
 
         <div className="rounded-full  w-16 flex items-center justify-center bg-grey-light mx-auto mb-8"></div>
-        <div className="font-bold text-xl mb-2 text-center">
+        <div className="font-bold text-xl mb-2 text-center font-rick">
           {characterOne.name} - {characterTwo.name}
         </div>
-        <p className="text-grey-darker text-base mb-4 text-center">{title}</p>
+        <p className="text-grey-darker text-base mb-4 text-center font-rick">{title}</p>
         <ul className="list-none max-h-[100px] overflow-y-auto   ">
           {episodes.map((ep) => {
             return (
-              <li className="text-center" key={ep[-1]}>
-                <span className="font-semibold">episode</span> -{" "}
+              <li className="text-center font-rick" key={ep[-1]}>
+                <span className="font-semibold font-rick">episode</span> -{" "}
                 <span> {ep} </span>
               </li>
             );

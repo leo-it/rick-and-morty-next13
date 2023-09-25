@@ -49,7 +49,7 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
   return (
     <>
       <article className="p-4  w-full  border rounded-lg border-gray-400">
-        <h3 className="my-5 font-bold text-2xl">
+        <h3 className="my-5 font-bold text-2xl font-rick">
           Character #1{" "}
           {characterOne && characterOne.name ? (
             <span>( {characterOne.name} )</span>
@@ -76,7 +76,7 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
         </div>{" "}
       </article>
       <article className="p-4  w-full border rounded-lg border-gray-400 ">
-        <h3 className="my-5 font-bold text-2xl">
+        <h3 className="my-5 font-bold text-2xl font-rick">
           Character #2{" "}
           {characterTwo && characterTwo.name ? (
             <span>( {characterTwo.name} )</span>

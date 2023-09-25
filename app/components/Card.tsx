@@ -54,11 +54,11 @@ export const Card: FC<Props> = ({
         />
         <div className="text-center sm:text-left sm:flex-grow">
           <div className="mb-4 ">
-            <p className="text-xl leading-tight truncate w-full text-gray-600 ">
+            <p className="text-xl leading-tight truncate w-full text-gray-600 font-rick">
               {name}
             </p>
-            <p className="text-sm leading-tight text-gray-500">{status}</p>
-            <p className="text-sm leading-tight text-gray-500">{specie}</p>
+            <p className="text-sm leading-tight text-gray-500 font-rick">{status}</p>
+            <p className="text-sm leading-tight text-gray-500 font-rick">{specie}</p>
           </div>
           <div>
             <button
@@ -73,7 +73,7 @@ export const Card: FC<Props> = ({
               ></div>
               <span
                 className={clsx(
-                  "font-semibold relative text-xs text-purple-400 group-hover:text-white",
+                  "font-semibold relative text-xs text-purple-400 group-hover:text-white font-rick",
                   isSelected === id && "text-white"
                 )}
               >
