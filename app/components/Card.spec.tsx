@@ -12,6 +12,7 @@ describe("Character card component", () => {
         name={"Rick Sanchez"}
         status={"Alive"}
         specie={"Human"}
+        image={"https://rickandmortyapi.com/api/character/avatar/1.jpeg?w=256"}
         id={1}
       />
     );
@@ -19,7 +20,6 @@ describe("Character card component", () => {
     const nameElement = screen.getByText("Rick Sanchez");
     const status = screen.getByText("Alive");
     const specie = screen.getByText("Human");
-    
 
     expect(nameElement).toBeTruthy();
     expect(status).toBeTruthy();

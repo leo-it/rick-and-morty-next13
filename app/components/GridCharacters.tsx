@@ -10,11 +10,8 @@ interface Character {
   name: string;
   status: string;
   species: string;
-  type: string;
-  gender: string;
   image: string;
   episode: string[];
-  url: string;
 }
 interface Props {
   characters: Character[];
