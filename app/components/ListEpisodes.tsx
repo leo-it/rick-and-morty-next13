@@ -2,7 +2,6 @@
 
 import { CardList } from "./CardList";
 import { CardListMatch } from "./CardListMatch";
-import Image from "next/image";
 import React from "react";
 import useStore from "../store";
 
