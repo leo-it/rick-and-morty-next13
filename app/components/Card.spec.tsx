@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { Card } from "./Card";
 
 let isSelected = 0;
-let setIsSelected = (id) => {
+let setIsSelected = (id: number) => {
   isSelected = id;
 };
 describe("Character card component", () => {
