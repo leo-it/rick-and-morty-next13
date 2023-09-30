@@ -6,3 +6,4 @@ export { ArrowScroll } from "./ArrowScroll";
 export { CardList } from "./CardList";
 export { CardListMatch } from "./CardListMatch";
 export { Navbar } from "./Navbar";
+export { LoadingScreen } from "./LoadingScreen";
