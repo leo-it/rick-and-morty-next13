@@ -1,9 +1,17 @@
 import "keen-slider/keen-slider.min.css";
 
-import React from "react";
+import React, { FC, ReactNode } from "react";
+
 import { useKeenSlider } from "keen-slider/react";
 
-export const Carousel = ({ children, perView }) => {
+interface Props {
+  children: ReactNode;
+  perView: number;
+}
+export const Carousel: FC<Props> = ({ children, perView }) => {
+  console.log("children", children);
+  console.log("perView", perView);
+
   const [sliderRef] = useKeenSlider({
     loop: true,
     mode: "free-snap",
