@@ -2,6 +2,7 @@ import { GridCharacters, ListEpisodes } from "./components";
 
 import { ArrowScroll } from "./components/ArrowScroll";
 import Link from "next/link";
+import Search from "./components/Search";
 import api from "./api";
 import clsx from "clsx";
 
@@ -12,6 +13,8 @@ export default async function Home({
 }) {
   const page =
     typeof searchParams.page === "string" ? Number(searchParams.page) : 1;
+  const search =
+    typeof searchParams.search === "string" ? searchParams.search : undefined;
 
   const responseCharacters = await api.fetch("character", page);
   const pageLength = responseCharacters.info.pages;
@@ -20,6 +23,9 @@ export default async function Home({
   return (
     <div className="max-w-[1500px] min-h-[80vh] mb-20 mx-auto">
       <ArrowScroll />
+      <div className="mt-10 w-[300px] mx-auto">
+        <Search search={search} />
+      </div>
       <section className="grid md:grid-cols-2 grid-cols-1 w-full gap-4 mt-10 mb-4 ">
         <GridCharacters characters={characters} />
       </section>

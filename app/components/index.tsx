@@ -7,3 +7,6 @@ export { CardList } from "./CardList";
 export { CardListMatch } from "./CardListMatch";
 export { Navbar } from "./Navbar";
 export { LoadingScreen } from "./LoadingScreen";
+export { CardCarousel } from "./CardCarousel";
+export { Carousel } from "./Carousel";
+// export { GridCarousel } from "./GridCarousel";

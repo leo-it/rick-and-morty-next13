@@ -23,11 +23,12 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
     useStore();
 
   //largo de la paginacion
-  const charactersOne = characters.slice(0, characters.length / 2);
-  const charactersTwo = characters.slice(
-    characters.length / 2,
-    characters.length
-  );
+  const charactersOne = characters
+    ? characters.slice(0, characters.length / 2)
+    : [];
+  const charactersTwo = characters
+    ? characters.slice(characters.length / 2, characters.length)
+    : [];
 
   useEffect(() => {
     const selectedCharacterOne = characters.find(

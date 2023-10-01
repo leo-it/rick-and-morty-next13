@@ -9,5 +9,10 @@ const api = {
 
     return item;
   },
+  search: (query: string) =>
+    fetch(
+      `https://rickandmortyapi.com/api/character/?name=${query}
+      `
+    ).then((res) => res.json() as Promise<ICharacter>),
 };
 export default api;
