@@ -1,12 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap'); 
-
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  background-color:rgba(248, 247, 247, 0.441)
+
+  background-color: rgba(248, 247, 247, 0.441) !important;
 }
 
 html {
@@ -46,8 +46,8 @@ body {
 }
 
 .scale-up-hor-center {
-	-webkit-animation: scale-up-hor-center 0.3s ease-in-out both;
-	        animation: scale-up-hor-center 0.3s ease-in-out both;
+  -webkit-animation: scale-up-hor-center 0.3s ease-in-out both;
+  animation: scale-up-hor-center 0.3s ease-in-out both;
 }
 
 /**
@@ -55,24 +55,24 @@ body {
  * animation scale-up-hor-center
  * ----------------------------------------
  */
- @-webkit-keyframes scale-up-hor-center {
+@-webkit-keyframes scale-up-hor-center {
   0% {
     -webkit-transform: scaleX(0.4);
-            transform: scaleX(0.4);
+    transform: scaleX(0.4);
   }
   100% {
     -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    transform: scaleX(1);
   }
 }
 @keyframes scale-up-hor-center {
   0% {
     -webkit-transform: scaleX(0.4);
-            transform: scaleX(0.4);
+    transform: scaleX(0.4);
   }
   100% {
     -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    transform: scaleX(1);
   }
 }
 .rotate--box {
