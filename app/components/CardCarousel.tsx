@@ -24,7 +24,7 @@ export const CardCarousel: FC<Props> = ({
       key={id}
       // ref={cardRef}
       className={
-        "rotate--box bg-white mx-auto w-[320px] shadow-lg hover:border  rounded-lg overflow-hidden scale-up-hor-center"
+        "rotate--box bg-white mx-auto w-[200px] md:w-[320px] shadow-lg hover:border  rounded-lg overflow-hidden scale-up-hor-center"
       }
     >
       <div className="sm:flex sm:items-center px-6 py-4">
