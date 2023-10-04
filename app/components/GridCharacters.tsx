@@ -3,6 +3,7 @@
 import React, { FC, useEffect, useState } from "react";
 
 import { Card } from "./Card";
+import Swal from "sweetalert2";
 import useStore from "../store";
 
 interface Character {
@@ -22,14 +23,6 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
   const { setCharacterOne, setCharacterTwo, characterOne, characterTwo } =
     useStore();
 
-  //largo de la paginacion
-  const charactersOne = characters
-    ? characters.slice(0, characters.length / 2)
-    : [];
-  const charactersTwo = characters
-    ? characters.slice(characters.length / 2, characters.length)
-    : [];
-
   useEffect(() => {
     const selectedCharacterOne = characters.find(
       (character) => character.id === isSelectedCharacterOne
@@ -43,6 +36,7 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
     );
     if (selectedCharacterTwo) setCharacterTwo(selectedCharacterTwo);
   }, [isSelectedCharacterTwo, characters, setCharacterTwo]);
+
 
   return (
     <>
@@ -58,7 +52,7 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
               )}
             </h3>
             <div className="grid grid-cols-2 gap-2 max-h-[55vh] overflow-y-auto">
-              {charactersOne.map((result) => {
+              {characters.map((result) => {
                 return (
                   <div className="pr-1" key={result.id}>
                     <Card
@@ -85,7 +79,7 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
               )}
             </h3>
             <div className="grid grid-cols-2 gap-2 max-h-[55vh] overflow-y-auto  ">
-              {charactersTwo.map((result) => {
+              {characters.map((result) => {
                 return (
                   <div className="pr-1" key={result.id}>
                     <Card

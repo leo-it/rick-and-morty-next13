@@ -1,15 +1,21 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
+
 import { CardList } from "./CardList";
 import { CardListMatch } from "./CardListMatch";
-import React from "react";
+import Swal from "sweetalert2";
 import useStore from "../store";
 
 export const ListEpisodes = () => {
   const { characterOne, characterTwo } = useStore();
+  const [characterOneEpisodes, setCharacterOneEpisodes] = useState(
+    characterOne.episode
+  );
+  const [characterTwoEpisodes, setCharacterTwoEpisodes] = useState(
+    characterTwo.episode
+  );
 
-  const characterOneEpisodes = characterOne.episode;
-  const characterTwoEpisodes = characterTwo.episode;
   function obtenerNumero(url: string) {
     const partes = url.split("/");
     return partes[partes.length - 1];
@@ -26,7 +32,16 @@ export const ListEpisodes = () => {
   const cargador = ({ src, width }: { src: any; width: any }) => {
     return `${src}?w=${width}`;
   };
+  useEffect(() => {
+    setCharacterOneEpisodes(characterOne.episode);
+    setCharacterTwoEpisodes(characterTwo.episode);
 
+    if (characterTwo === characterOne) {
+      Swal.fire("Repeated character, choose a different one please");
+      setCharacterOneEpisodes([]);
+      setCharacterTwoEpisodes([]);
+    }
+  }, [characterTwo, characterOne]);
   return (
     <>
       {characterOneEpisodes.length > 0 && characterTwoEpisodes.length > 0 ? (
