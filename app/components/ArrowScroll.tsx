@@ -22,7 +22,7 @@ export const ArrowScroll = () => {
   useEffect(() => {
     setIsClicked(false);
 
-    if (characterOne.name && characterTwo.name)
+    if (characterOne.name && characterTwo.name && characterOne !== characterTwo)
       window.scroll({
         top: document.body.offsetHeight,
         left: 0,
