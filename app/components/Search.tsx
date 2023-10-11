@@ -13,6 +13,7 @@ const Search = ({ search }: { search?: string }) => {
   const [query] = useDebounce(text, 750)
 
   useEffect(() => {
+    
     if (initialRender.current) {
       initialRender.current = false
       return

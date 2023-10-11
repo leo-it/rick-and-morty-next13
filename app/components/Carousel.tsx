@@ -9,8 +9,6 @@ interface Props {
   perView: number;
 }
 export const Carousel: FC<Props> = ({ children, perView }) => {
-  console.log("children", children);
-  console.log("perView", perView);
 
   const [sliderRef] = useKeenSlider({
     loop: true,

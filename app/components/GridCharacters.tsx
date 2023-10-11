@@ -3,7 +3,6 @@
 import React, { FC, useEffect, useState } from "react";
 
 import { Card } from "./Card";
-import Swal from "sweetalert2";
 import useStore from "../store";
 
 interface Character {

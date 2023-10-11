@@ -16,22 +16,22 @@ export const ListEpisodes = () => {
     characterTwo.episode
   );
 
-  function obtenerNumero(url: string) {
-    const partes = url.split("/");
-    return partes[partes.length - 1];
+  function getNumbers(url: string) {
+    const parts = url.split("/");
+    return parts[parts.length - 1];
   }
 
   // Obtener los números de ambos arrays
-  const episodesOne = characterOneEpisodes.map(obtenerNumero);
-  const episodesTwo = characterTwoEpisodes.map(obtenerNumero);
+  const episodesOne = characterOneEpisodes.map(getNumbers);
+  const episodesTwo = characterTwoEpisodes.map(getNumbers);
 
   // Encontrar números coincidentes
-  const episodesMatch = episodesOne.filter((numero) =>
-    episodesTwo.includes(numero)
+  const episodesMatch = episodesOne.filter((num) =>
+    episodesTwo.includes(num)
   );
-  const cargador = ({ src, width }: { src: any; width: any }) => {
+  /* const cargador = ({ src, width }: { src: any; width: any }) => {
     return `${src}?w=${width}`;
-  };
+  }; */
   useEffect(() => {
     setCharacterOneEpisodes(characterOne.episode);
     setCharacterTwoEpisodes(characterTwo.episode);
