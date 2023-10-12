@@ -17,9 +17,9 @@ export default async function Character({
     : [];
   return (
     <div className="max-w-[1200px] h-screen mt-10 mx-auto  ">
-      <div className=" w-[300px] mx-auto mb-10">
+      {/* <div className=" w-[300px] mx-auto mb-10">
         <Search search={search} />
-      </div>
+      </div> */}
       {charactersOne.length < 1 ? (
         <h2 className="my-5 font-bold text-2xl text-center font-rick">
           The character was not found...{" "}
