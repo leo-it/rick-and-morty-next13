@@ -1,3 +1,5 @@
+"use client";
+
 import * as img from "./../../public/img/Rick_and_Morty.svg.png";
 
 import Image from "next/image";
