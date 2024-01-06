@@ -1,10 +1,15 @@
+import { FC } from "react";
 import { GridCharacters } from "..";
 import Link from "next/link";
 import React from "react";
 import api from "@/app/api";
 import clsx from "clsx";
 
-const GridFetchCharacters = async ({ page }) => {
+interface Props {
+  page: number;
+}
+
+const GridFetchCharacters: FC<Props> = async ({ page }) => {
   const responseCharacters = await api.fetch("character", page);
   const pageLength = responseCharacters.info.pages;
   const characters = responseCharacters.results;
