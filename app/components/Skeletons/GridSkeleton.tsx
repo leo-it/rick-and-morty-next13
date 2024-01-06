@@ -7,8 +7,6 @@ const GridSkeleton = (props) => (
     speed={2}
     height={444}
     viewBox="0 0 1100 444"
-    backgroundColor="#dbbdff"
-    foregroundColor="#ecebeb"
     {...props}
   >
     
