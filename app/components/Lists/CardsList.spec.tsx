@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import { CardList } from "./CardList";
+import { CardList } from "./CardsList";
 
 const character = {
   name: "Rick Sanchez",

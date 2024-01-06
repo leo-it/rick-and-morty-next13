@@ -1,6 +1,6 @@
 "use client";
 
-import { CardCarousel, Carousel } from ".";
+import { CardCarousel, Carousel } from "..";
 import React, { FC, useEffect, useState } from "react";
 
 interface Character {

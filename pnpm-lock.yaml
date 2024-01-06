@@ -19,6 +19,7 @@ specifiers:
   next: 14.0.4
   postcss: 8.4.30
   react: 18.2.0
+  react-content-loader: ^6.2.1
   react-dom: 18.2.0
   sweetalert2: ^11.7.31
   tailwindcss: 3.3.3
@@ -39,6 +40,7 @@ dependencies:
   next: 14.0.4_biqbaboplfbrettd7655fr4n2y
   postcss: 8.4.30
   react: 18.2.0
+  react-content-loader: 6.2.1_react@18.2.0
   react-dom: 18.2.0_react@18.2.0
   sweetalert2: 11.7.31
   tailwindcss: 3.3.3_ts-node@10.9.1
@@ -4495,6 +4497,15 @@ packages:
 
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
+    dev: false
+
+  /react-content-loader/6.2.1_react@18.2.0:
+    resolution: {integrity: sha512-6ONbFX+Hi3SHuP66JB8CPvJn372pj+qwltJV0J8z/8MFrq98I1cbFdZuhDWeQXu3CFxiiDTXJn7DFxx2ZvrO7g==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16.0.0'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-dom/18.2.0_react@18.2.0:

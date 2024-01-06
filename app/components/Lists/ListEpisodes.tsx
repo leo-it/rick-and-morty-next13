@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 
-import { CardList } from "./CardList";
+import { CardList } from "./CardsList";
 import { CardListMatch } from "./CardListMatch";
 import Swal from "sweetalert2";
-import useStore from "../store";
+import useStore from "../../store";
 
 export const ListEpisodes = () => {
   const { characterOne, characterTwo } = useStore();

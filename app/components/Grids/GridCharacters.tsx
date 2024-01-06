@@ -2,8 +2,8 @@
 
 import React, { FC, useEffect, useState } from "react";
 
-import { Card } from "./Card";
-import useStore from "../store";
+import { Card } from "../Cards/CardCharacter";
+import useStore from "../../store";
 
 interface Character {
   id: number;
@@ -39,6 +39,7 @@ export const GridCharacters: FC<Props> = ({ characters }) => {
 
   return (
     <>
+      
       {characters.length > 0 ? (
         <>
           <article className="p-4  w-full  border rounded-lg border-gray-400">

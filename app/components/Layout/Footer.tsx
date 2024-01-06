@@ -1,4 +1,4 @@
-import * as img from "./../../public/img/Rick_and_Morty.svg.png";
+import * as img from "./../../../public/img/Rick_and_Morty.svg.png";
 
 import Image from "next/image";
 import React from "react";

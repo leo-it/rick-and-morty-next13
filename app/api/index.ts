@@ -1,7 +1,8 @@
-import { ICharacter } from "./types";
+import { ICharacter } from "./../interfaces/api";
 
 const api = {
   fetch: async (query: string, page: number) => {
+    // await new Promise((resolve) => setTimeout(resolve, 500));
     const item = await fetch(
       //iria process.env.API_URL
       `https://rickandmortyapi.com/api/${query}/?page=${page}`
