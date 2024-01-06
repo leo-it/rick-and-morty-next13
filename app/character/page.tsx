@@ -1,5 +1,5 @@
-import { GridCarousel } from "../components/GridCarousel";
-import Search from "../components/Search";
+import { GridCarousel } from "../components/Grids/GridCarousel";
+import Search from "../components/Searchbox/Search";
 import api from "../api";
 
 export default async function Character({

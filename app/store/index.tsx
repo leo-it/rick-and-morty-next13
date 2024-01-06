@@ -1,19 +1,5 @@
-import { create } from 'zustand'
-
-interface CharacterState {
-  characterOne: { episode: string[]; name: string; image: string };
-  setCharacterOne: (by: {
-    episode: string[];
-    name: string;
-    image: string;
-  }) => void;
-  characterTwo: { episode: string[]; name: string; image: string };
-  setCharacterTwo: (by: {
-    episode: string[];
-    name: string;
-    image: string;
-  }) => void;
-}
+import { CharacterState } from "../interfaces";
+import { create } from "zustand";
 
 const useStore = create<CharacterState>()((set) => ({
   characterOne: {

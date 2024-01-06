@@ -1,8 +1,8 @@
 import { GridCharacters, ListEpisodes } from "./components";
 
-import { ArrowScroll } from "./components/ArrowScroll";
+import { ArrowScroll } from "./components/Buttons/ArrowScroll";
 import Link from "next/link";
-import Search from "./components/Search";
+import Search from "./components/Searchbox/Search";
 import api from "./api";
 import clsx from "clsx";
 

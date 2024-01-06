@@ -1,4 +1,4 @@
-import { ICharacter } from "./types";
+import { ICharacter } from './../interfaces/api';
 
 const api = {
   fetch: async (query: string, page: number) => {

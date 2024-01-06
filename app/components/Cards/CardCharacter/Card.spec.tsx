@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 
-import { Card } from "./Card";
+import { Card } from ".";
 
 let isSelected = 0;
 let setIsSelected = (id: number) => {

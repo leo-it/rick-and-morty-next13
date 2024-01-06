@@ -4,7 +4,7 @@ import "./arrowScroll.css";
 
 import React, { useEffect, useRef, useState } from "react";
 
-import useStore from "../store";
+import useStore from "../../../store";
 
 export const ArrowScroll = () => {
   const [isClicked, setIsClicked] = useState(false);
